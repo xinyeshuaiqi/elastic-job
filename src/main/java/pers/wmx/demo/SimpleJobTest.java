@@ -17,6 +17,7 @@ import com.dangdang.ddframe.job.reg.zookeeper.ZookeeperRegistryCenter;
  * Created on 2021-07-08
  */
 public class SimpleJobTest {
+    // 原生Java跑一个
     public static void main(String[] args) {
         // zk 注册中心
         CoordinatorRegistryCenter registryCenter = new ZookeeperRegistryCenter(

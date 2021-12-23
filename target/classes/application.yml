@@ -6,5 +6,5 @@ spring:
       username: root
       password: wmx123
     regCenter: # 注册中心
-      serverList: 127.0.0.1:2181
+      serverList: 39.97.47.254:2181
       namespace: elasticJobDemo
