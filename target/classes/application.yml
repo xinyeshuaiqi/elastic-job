@@ -1,0 +1,10 @@
+spring:
+  elasticjob:
+    datasource: # job需要的记录数据源
+      url: jdbc:mysql://39.97.47.254:3306/mydb?useUnicode=true&characterEncoding=utf-8&verifyServerCertificate=false&useSSL=false&requireSSL=false
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: wmx123
+    regCenter: # 注册中心
+      serverList: 127.0.0.1:2181
+      namespace: elasticJobDemo
