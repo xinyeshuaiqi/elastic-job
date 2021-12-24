@@ -42,12 +42,9 @@ public class MyJobConfig {
     // Spring Boot 整合跑起来
     @Bean(initMethod = "init")
     public JobScheduler mySimpleJobScheduler(final MySimpleJob mySimpleJob) {
+        LiteJobConfiguration liteJobConfiguration = ElasticJobUtils.getLiteJobConfiguration(mySimpleJob.getClass(),
+                JOB_NAME, CRON, SHARDING_TOTAL_COUNT, SHARDING_ITEM_PARAMETERS, JOB_PARAMETERS);
 
-        LiteJobConfiguration liteJobConfiguration = ElasticJobUtils
-                .getLiteJobConfiguration(mySimpleJob.getClass(), JOB_NAME, CRON,
-                        SHARDING_TOTAL_COUNT, SHARDING_ITEM_PARAMETERS, JOB_PARAMETERS);
-        // 参数：1.定时器实例，2.注册中心类，3.LiteJobConfiguration，
-        //     3.历史轨迹（不需要可以省略）
         return new SpringJobScheduler(mySimpleJob, regCenter, liteJobConfiguration, jobEventConfiguration);
     }
 }
