@@ -6,7 +6,6 @@ import com.dangdang.ddframe.job.config.simple.SimpleJobConfiguration;
 import com.dangdang.ddframe.job.event.JobEventConfiguration;
 import com.dangdang.ddframe.job.event.rdb.JobEventRdbConfiguration;
 import com.dangdang.ddframe.job.lite.api.JobScheduler;
-import com.dangdang.ddframe.job.lite.api.strategy.impl.AverageAllocationJobShardingStrategy;
 import com.dangdang.ddframe.job.lite.config.LiteJobConfiguration;
 import com.dangdang.ddframe.job.reg.base.CoordinatorRegistryCenter;
 import com.dangdang.ddframe.job.reg.zookeeper.ZookeeperConfiguration;
@@ -40,10 +39,6 @@ public class SimpleJobTest {
         SimpleJobConfiguration simpleJobConfiguration = new SimpleJobConfiguration(
                 coreConfig, MySimpleJob.class.getCanonicalName()
         );
-
-        // 作业分片策略
-        // 平均分配
-        String jobShardingClass = AverageAllocationJobShardingStrategy.class.getCanonicalName();
 
         // 作业根配置
         LiteJobConfiguration jobRootConfig = LiteJobConfiguration.newBuilder(simpleJobConfiguration)

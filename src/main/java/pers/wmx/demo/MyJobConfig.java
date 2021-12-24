@@ -31,7 +31,7 @@ public class MyJobConfig {
     private static final String SHARDING_ITEM_PARAMETERS = "0=Beijing,1=Shanghai";
 
     // 自定义参数
-    private static final String JOB_PARAMETERS = "parameter";
+    private static final String JOB_PARAMETERS = "shadow";
 
     @Resource
     private ZookeeperRegistryCenter regCenter;
